@@ -21,7 +21,3 @@ jobs:
 
     x86-64-ImmortalWrt:
       uses: ./.github/workflows/x86-64-ImmortalWrt.yml
-
-    MT798X-ImmortalWrt:
-      uses: ./.github/workflows/MT798X-ImmortalWrt.yml
-
