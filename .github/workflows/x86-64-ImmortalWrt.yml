@@ -21,11 +21,6 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-    - name: Maximize Disk Space(最大化磁盘空间)
-      uses: sbwml/actions@free-disk
-      with:
-        build-mount-path: /mnt/openwrt
-
     - name: Check Server Performance(检查服务器性能)
       run: |
         echo "警告⚠"
@@ -55,6 +50,7 @@ jobs:
     - name: Clone Source Code(克隆源代码)
       run: |
         df -hT $GITHUB_WORKSPACE
+        sudo mkdir -p /mnt/openwrt
         sudo chown -R $(id -u):$(id -g) /mnt/openwrt
         git clone --depth 1 -b $REPO_BRANCH --single-branch $REPO_URL /mnt/openwrt
         cd /mnt/openwrt
